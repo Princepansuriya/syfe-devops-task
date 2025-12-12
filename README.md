@@ -119,7 +119,4 @@ helm uninstall prometheus-stack -n monitoring
 4.  **Send the email.** You are ready! 🚀
 
 Images:
-![alt text](<Screenshot 2025-12-12 102710.png>)
-![alt text](<Screenshot 2025-12-12 103937.png>)
-![alt text](<Screenshot 2025-12-12 102618.png>)
 ![alt text](<Screenshot 2025-12-12 103948.png>)
