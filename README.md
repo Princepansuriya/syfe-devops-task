@@ -20,16 +20,16 @@ This repository contains a production-grade Kubernetes deployment for a WordPres
 
 ### 1. WordPress Application (Objective #1)
 The application is fully functional, served via the custom Nginx proxy.
-![WordPress Setup](screenshots/wordpress-setup.png)
+![alt text](<WordPress Setup.png>)
 
 ### 2. Monitoring Dashboard (Objective #2)
 **Panel A: WordPress Pod CPU Utilization**
 Real-time tracking of resource usage for the application container.
-![CPU Usage](screenshots/grafana-cpu.png)
+![alt text](Grafana-CPU.png)
 
 **Panel B: Total Request Count (Traffic Proxy)**
 *Engineering Note:* Due to a library version conflict in the `nginx-lua-prometheus` package causing internal 500 errors on the application metric endpoint, this dashboard utilizes **Container Network Packet Volume** (`container_network_receive_packets_total`) as a reliable proxy metric to visualize traffic load.
-![Traffic Graph](screenshots/grafana-traffic.png)
+
 
 ---
 
