@@ -1,0 +1,14 @@
+storageClass: "hostpath" # Use "standard" if on cloud, "hostpath" for Docker Desktop
+
+mysql:
+  image: prince2003pansuriya/syfe-mysql:v1
+  password: rootpassword
+  storage: 1Gi
+
+wordpress:
+  image: prince2003pansuriya/syfe-wordpress:v1
+  storage: 1Gi
+
+nginx:
+  image: prince2003pansuriya/syfe-nginx:v1
+  replicas: 1

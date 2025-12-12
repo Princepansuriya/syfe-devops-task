@@ -1,0 +1,24 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: {{ .Release.Name }}-alerts
+  labels:
+    release: prometheus-stack
+spec:
+  groups:
+  - name: wordpress-alerts
+    rules:
+    - alert: HighErrorRate
+      expr: nginx_http_requests_total{status=~"5.."} > 0
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: "High 5xx error rate on {{ $labels.host }}"
+    - alert: HighCpuUsage
+      expr: container_cpu_usage_seconds_total{pod=~"{{ .Release.Name }}-wordpress.*"} > 0.8
+      for: 2m
+      labels:
+        severity: warning
+      annotations:
+        summary: "Wordpress CPU usage is high"
